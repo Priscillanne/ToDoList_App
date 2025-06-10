@@ -1,16 +1,27 @@
-# Function 1: Add Task
+# Define task list
+task_list = []
+
+# 1. Add Task Function
 def add_task():
     task = {
-        "name" : input("Enter the task: "),
-        "status" : "Pending"
+        "name": input("Enter the task: "),
+        "status": "Pending"
     }
-    print("Task \"{0}\" has been added.".format(task.get("name")))
     task_list.append(task)
+    print(f'Task "{task["name"]}" has been added.')
 
+# 2. View All Tasks Function
+def view_all_task():
+    if not task_list:
+        raise ValueError("Task list is empty")
+    
+    print("All Tasks:")
+    for i, task in enumerate(task_list, start=1):
+        print(f"{i}. {task['name']} - {task['status']}")
+
+# Menu and Main Loop
 print("To-Do List Menu")
 print()
-
-#print to-do list options
 print(
     "1. Add Task\n"
     "2. View All Tasks\n"
@@ -20,13 +31,8 @@ print(
     "6. Exit"
 )
 
-#define array for tasks
-task_list = []
-
-#repeat questions until option 6(exit)
 while True:
     print()
-
     try:
         user_input = input("Enter your choice (1-6): ")
 
@@ -35,20 +41,20 @@ while True:
         except:
             raise ValueError("Enter a number")
 
-        if (choice <= 0) or (choice > 6):
+        if choice <= 0 or choice > 6:
             raise ValueError("Choose a number 1-6")
 
-        if (choice == 1): 
+        if choice == 1:
             add_task()
-        elif (choice == 2):
+        elif choice == 2:
             view_all_task()
-        elif (choice == 3):
-            delete_task()
-        elif (choice == 4):
-            mark_done()
-        elif (choice == 5):
-            view_status_task()
-        elif(choice == 6):
+        elif choice == 3:
+            print("Delete Task feature is not implemented yet.")
+        elif choice == 4:
+            print("Mark Task as Done feature is not implemented yet.")
+        elif choice == 5:
+            print("View Done/Pending Tasks feature is not implemented yet.")
+        elif choice == 6:
             print("Thank you")
             break
         else:
