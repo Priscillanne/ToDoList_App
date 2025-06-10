@@ -19,6 +19,22 @@ def view_all_task():
     for i, task in enumerate(task_list, start=1):
         print(f"{i}. {task['name']} - {task['status']}")
 
+# 3. Delete Task Function
+def delete_task():
+    if not task_list:
+        raise ValueError("Task list is empty")
+
+    try:
+        delete_index = int(input("Enter the task number to delete: "))
+    except:
+        raise ValueError("Enter a valid number")
+
+    if delete_index <= 0 or delete_index > len(task_list):
+        raise ValueError("That task does not exist")
+
+    deleted_task = task_list.pop(delete_index - 1)
+    print(f'Task {delete_index}: "{deleted_task["name"]}" has been deleted.')
+
 # Menu and Main Loop
 print("To-Do List Menu")
 print()
@@ -49,7 +65,7 @@ while True:
         elif choice == 2:
             view_all_task()
         elif choice == 3:
-            print("Delete Task feature is not implemented yet.")
+            delete_task()
         elif choice == 4:
             print("Mark Task as Done feature is not implemented yet.")
         elif choice == 5:
