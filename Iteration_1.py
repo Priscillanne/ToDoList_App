@@ -35,6 +35,23 @@ def delete_task():
     deleted_task = task_list.pop(delete_index - 1)
     print(f'Task {delete_index}: "{deleted_task["name"]}" has been deleted.')
 
+# 4. Mark Task as Done Function
+def mark_done():
+    if not task_list:
+        raise ValueError("Task list is empty")
+    
+    try:
+        task_number = int(input("Enter the task number to mark as done: "))
+    except:
+        raise ValueError("Enter a valid number")
+
+    if task_number <= 0 or task_number > len(task_list):
+        raise ValueError("That task does not exist")
+
+    new_status = input("Enter new status (e.g., Done, In Progress): ")
+    task_list[task_number - 1]["status"] = new_status
+    print(f'Task {task_number}: "{task_list[task_number - 1]["name"]}" has been marked {new_status}.')
+
 # Menu and Main Loop
 print("To-Do List Menu")
 print()
@@ -67,7 +84,7 @@ while True:
         elif choice == 3:
             delete_task()
         elif choice == 4:
-            print("Mark Task as Done feature is not implemented yet.")
+            mark_done()
         elif choice == 5:
             print("View Done/Pending Tasks feature is not implemented yet.")
         elif choice == 6:
