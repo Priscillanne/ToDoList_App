@@ -52,6 +52,21 @@ def mark_done():
     task_list[task_number - 1]["status"] = new_status
     print(f'Task {task_number}: "{task_list[task_number - 1]["name"]}" has been marked {new_status}.')
 
+# 5. View Tasks by Status Function
+def view_status_task():
+    if not task_list:
+        raise ValueError("Task list is empty")
+
+    status = input("Enter the status to filter by (e.g., Pending, Done): ")
+    matching_tasks = [task for task in task_list if task["status"].lower() == status.lower()]
+
+    if not matching_tasks:
+        raise ValueError(f"No tasks with status '{status}'")
+
+    print(f"Tasks with status '{status}':")
+    for i, task in enumerate(matching_tasks, start=1):
+        print(f"{i}. {task['name']} - {task['status']}")
+
 # Menu and Main Loop
 print("To-Do List Menu")
 print()
@@ -86,7 +101,7 @@ while True:
         elif choice == 4:
             mark_done()
         elif choice == 5:
-            print("View Done/Pending Tasks feature is not implemented yet.")
+            view_status_task()
         elif choice == 6:
             print("Thank you")
             break
