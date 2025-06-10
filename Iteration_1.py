@@ -1,3 +1,12 @@
+# Function 1: Add Task
+def add_task():
+    task = {
+        "name" : input("Enter the task: "),
+        "status" : "Pending"
+    }
+    print("Task \"{0}\" has been added.".format(task.get("name")))
+    task_list.append(task)
+
 print("To-Do List Menu")
 print()
 
@@ -29,17 +38,16 @@ while True:
         if (choice <= 0) or (choice > 6):
             raise ValueError("Choose a number 1-6")
 
-        # functions not yet defined, will be added in next steps
         if (choice == 1): 
-            pass
+            add_task()
         elif (choice == 2):
-            pass
+            view_all_task()
         elif (choice == 3):
-            pass
+            delete_task()
         elif (choice == 4):
-            pass
+            mark_done()
         elif (choice == 5):
-            pass
+            view_status_task()
         elif(choice == 6):
             print("Thank you")
             break
