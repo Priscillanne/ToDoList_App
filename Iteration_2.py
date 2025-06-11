@@ -1,14 +1,27 @@
-# Define task list
+import datetime
+
 task_list = []
 
-# 1. Add Task Function
+# 1. Add Task Function (adds due date)
 def add_task():
+    task_name = input("Enter the task: ")
+
+    # Validate due date format
+    while True:
+        due_date = input("Enter the due date (YYYY-MM-DD): ")
+        try:
+            datetime.datetime.strptime(due_date, "%Y-%m-%d")
+            break
+        except ValueError:
+            print("Incorrect date format. Please enter as YYYY-MM-DD.")
+
     task = {
-        "name": input("Enter the task: "),
-        "status": "Pending"
+        "name": task_name,
+        "status": "Pending",
+        "due_date": due_date
     }
     task_list.append(task)
-    print(f'Task "{task["name"]}" has been added.')
+    print(f'Task "{task["name"]}" with due date {task["due_date"]} has been added.')
 
 # 2. View All Tasks Function
 def view_all_task():
@@ -17,7 +30,7 @@ def view_all_task():
     
     print("All Tasks:")
     for i, task in enumerate(task_list, start=1):
-        print(f"{i}. {task['name']} - {task['status']}")
+        print(f"{i}. {task['name']} - {task['status']} | Due: {task['due_date']}")
 
 # 3. Delete Task Function
 def delete_task():
@@ -27,7 +40,7 @@ def delete_task():
     try:
         delete_index = int(input("Enter the task number to delete: "))
     except:
-        raise ValueError("Enter a valid number")
+        raise ValueError("Enter a valid number :")
 
     if delete_index <= 0 or delete_index > len(task_list):
         raise ValueError("That task does not exist")
@@ -41,9 +54,9 @@ def mark_done():
         raise ValueError("Task list is empty")
     
     try:
-        task_number = int(input("Enter the task number to mark as done: "))
+        task_number = int(input("Enter the task number to mark as done : "))
     except:
-        raise ValueError("Enter a valid number")
+        raise ValueError("Invalid input. Please enter a number like 1, 2, 3...")
 
     if task_number <= 0 or task_number > len(task_list):
         raise ValueError("That task does not exist")
@@ -65,19 +78,18 @@ def view_status_task():
 
     print(f"Tasks with status '{status}':")
     for i, task in enumerate(matching_tasks, start=1):
-        print(f"{i}. {task['name']} - {task['status']}")
+        print(f"{i}. {task['name']} - {task['status']} | Due: {task['due_date']}")
 
 # Menu and Main Loop
-print("To-Do List Menu")
-print()
-print(
-    "1. Add Task\n"
-    "2. View All Tasks\n"
-    "3. Delete Task\n"
-    "4. Mark Task as Done\n"
-    "5. View Done/Pending Tasks\n"
-    "6. Exit"
-)
+print("To-Do List Menu\n")
+print("""
+1. Add Task
+2. View All Tasks
+3. Delete Task
+4. Mark Task as Done
+5. View Done/Pending Tasks
+6. Exit
+""")
 
 while True:
     print()
@@ -105,7 +117,6 @@ while True:
         elif choice == 6:
             print("Thank you")
             break
-        else:
-            print("Invalid choice, please try again.")
     except ValueError as e:
         print("Error: " + str(e))
+
