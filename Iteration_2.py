@@ -2,7 +2,7 @@ import datetime
 
 task_list = []
 
-# 1. Add Task Function (adds due date and priority level)
+# 1. Add Task Function (now includes due date, priority, and category)
 def add_task():
     task_name = input("Enter the task: ")
 
@@ -22,14 +22,17 @@ def add_task():
             break
         print("Invalid priority. Please enter High, Medium, or Low.")
 
+    category = input("Enter the category (e.g., School, Work, Personal): ")
+
     task = {
         "name": task_name,
         "status": "Pending",
         "due_date": due_date,
-        "priority": priority
+        "priority": priority,
+        "category": category
     }
     task_list.append(task)
-    print(f'Task "{task["name"]}" has been added with priority {priority} and due date {due_date}.')
+    print(f'Task "{task["name"]}" has been added with priority {priority}, due date {due_date}, and category "{category}".')
 
 # 2. View All Tasks Function
 def view_all_task():
@@ -38,7 +41,7 @@ def view_all_task():
     
     print("All Tasks:")
     for i, task in enumerate(task_list, start=1):
-        print(f"{i}. {task['name']} - {task['status']} | Due: {task['due_date']} | Priority: {task['priority']}")
+        print(f"{i}. {task['name']} - {task['status']} | Due: {task['due_date']} | Priority: {task['priority']} | Category: {task['category']}")
 
 # 3. Delete Task Function
 def delete_task():
@@ -86,7 +89,7 @@ def view_status_task():
 
     print(f"Tasks with status '{status}':")
     for i, task in enumerate(matching_tasks, start=1):
-        print(f"{i}. {task['name']} - {task['status']} | Due: {task['due_date']} | Priority: {task['priority']}")
+        print(f"{i}. {task['name']} - {task['status']} | Due: {task['due_date']} | Priority: {task['priority']} | Category: {task['category']}")
 
 # Menu and Main Loop
 print("To-Do List Menu\n")
