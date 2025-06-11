@@ -2,7 +2,7 @@ import datetime
 
 task_list = []
 
-# 1. Add Task Function (adds due date)
+# 1. Add Task Function (adds due date and priority level)
 def add_task():
     task_name = input("Enter the task: ")
 
@@ -15,13 +15,21 @@ def add_task():
         except ValueError:
             print("Incorrect date format. Please enter as YYYY-MM-DD.")
 
+    # Validate priority input
+    while True:
+        priority = input("Enter the priority (High/Medium/Low): ").capitalize()
+        if priority in ["High", "Medium", "Low"]:
+            break
+        print("Invalid priority. Please enter High, Medium, or Low.")
+
     task = {
         "name": task_name,
         "status": "Pending",
-        "due_date": due_date
+        "due_date": due_date,
+        "priority": priority
     }
     task_list.append(task)
-    print(f'Task "{task["name"]}" with due date {task["due_date"]} has been added.')
+    print(f'Task "{task["name"]}" has been added with priority {priority} and due date {due_date}.')
 
 # 2. View All Tasks Function
 def view_all_task():
@@ -30,7 +38,7 @@ def view_all_task():
     
     print("All Tasks:")
     for i, task in enumerate(task_list, start=1):
-        print(f"{i}. {task['name']} - {task['status']} | Due: {task['due_date']}")
+        print(f"{i}. {task['name']} - {task['status']} | Due: {task['due_date']} | Priority: {task['priority']}")
 
 # 3. Delete Task Function
 def delete_task():
@@ -40,7 +48,7 @@ def delete_task():
     try:
         delete_index = int(input("Enter the task number to delete: "))
     except:
-        raise ValueError("Enter a valid number :")
+        raise ValueError("Enter a valid number (e.g., 1, 2, 3...)")
 
     if delete_index <= 0 or delete_index > len(task_list):
         raise ValueError("That task does not exist")
@@ -54,7 +62,7 @@ def mark_done():
         raise ValueError("Task list is empty")
     
     try:
-        task_number = int(input("Enter the task number to mark as done : "))
+        task_number = int(input("Enter the task number to mark as done (e.g., 1): "))
     except:
         raise ValueError("Invalid input. Please enter a number like 1, 2, 3...")
 
@@ -78,7 +86,7 @@ def view_status_task():
 
     print(f"Tasks with status '{status}':")
     for i, task in enumerate(matching_tasks, start=1):
-        print(f"{i}. {task['name']} - {task['status']} | Due: {task['due_date']}")
+        print(f"{i}. {task['name']} - {task['status']} | Due: {task['due_date']} | Priority: {task['priority']}")
 
 # Menu and Main Loop
 print("To-Do List Menu\n")
@@ -119,4 +127,3 @@ while True:
             break
     except ValueError as e:
         print("Error: " + str(e))
-
