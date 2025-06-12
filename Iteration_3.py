@@ -1,10 +1,33 @@
 import tkinter as tk
 from tkinter import messagebox, simpledialog, ttk
+import json
+import os
+import datetime
 
-# Global task list
 task_list = []
+FILENAME = "tasks.json"
 
-# Function to refresh the task display
+def load_tasks():
+    global task_list
+    if os.path.exists(FILENAME):
+        with open(FILENAME, "r") as f:
+            task_list.clear()
+            task_list.extend(json.load(f))
+
+def save_tasks():
+    with open(FILENAME, "w") as f:
+        json.dump(task_list, f, indent=2)
+
+def validate_due_date(date_str):
+    try:
+        datetime.datetime.strptime(date_str, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False
+
+def validate_priority(priority_str):
+    return priority_str.capitalize() in ["High", "Medium", "Low"]
+
 def refresh_task_display():
     for widget in task_frame.winfo_children():
         widget.destroy()
@@ -14,20 +37,55 @@ def refresh_task_display():
         return
 
     for i, task in enumerate(task_list, start=1):
-        display = f"{i}. {task['name']} - {task['status']}"
+        display = (
+            f"{i}. {task['name']}\n"
+            f"   • Status: {task['status']}\n"
+            f"   • Due: {task.get('due_date', 'N/A')}\n"
+            f"   • Priority: {task.get('priority', 'N/A')}\n"
+            f"   • Category: {task.get('category', 'N/A')}"
+        )
         label = tk.Label(task_frame, text=display, anchor="w", justify="left", padx=10, pady=5, bg="white", relief="groove")
         label.pack(fill="x", padx=5, pady=4)
 
-# Add a new task
 def add_task():
     task_name = simpledialog.askstring("Add Task", "Enter the task:")
     if not task_name:
         return
-    task = {"name": task_name, "status": "Pending"}
+
+    while True:
+        task_due = simpledialog.askstring("Due Date", "Enter due date (YYYY-MM-DD):")
+        if task_due is None:
+            return
+        if validate_due_date(task_due):
+            break
+        else:
+            messagebox.showerror("Invalid Input", "Incorrect date format. Please enter as YYYY-MM-DD.")
+
+    while True:
+        task_priority = simpledialog.askstring("Priority", "Enter priority (High/Medium/Low):")
+        if task_priority is None:
+            return
+        if validate_priority(task_priority):
+            task_priority = task_priority.capitalize()
+            break
+        else:
+            messagebox.showerror("Invalid Input", "Priority must be High, Medium, or Low.")
+
+    task_category = simpledialog.askstring("Category", "Enter category (e.g., School, Work, Personal):")
+    if task_category is None:
+        task_category = "Uncategorized"
+
+    task = {
+        "name": task_name,
+        "status": "Pending",
+        "due_date": task_due,
+        "priority": task_priority,
+        "category": task_category
+    }
     task_list.append(task)
+    save_tasks()
     refresh_task_display()
 
-# Delete a task
 def delete_task():
     if not task_list:
         messagebox.showerror("Error", "List is empty.")
@@ -39,12 +97,12 @@ def delete_task():
 
     if 1 <= task_number <= len(task_list):
         deleted = task_list.pop(task_number - 1)
+        save_tasks()
         messagebox.showinfo("Deleted", f'Task {task_number}: "{deleted["name"]}" has been deleted.')
         refresh_task_display()
     else:
         messagebox.showerror("Error", "That task does not exist.")
 
-# Mark a task as done
 def mark_task_done():
     if not task_list:
         messagebox.showerror("Error", "List is empty.")
@@ -56,12 +114,12 @@ def mark_task_done():
 
     if 1 <= task_number <= len(task_list):
         task_list[task_number - 1]["status"] = "Done"
+        save_tasks()
         messagebox.showinfo("Updated", f'Task {task_number} marked as Done.')
         refresh_task_display()
     else:
         messagebox.showerror("Error", "That task does not exist.")
 
-# View tasks filtered by status
 def view_by_status():
     if not task_list:
         messagebox.showerror("Error", "List is empty.")
@@ -70,7 +128,7 @@ def view_by_status():
     status_filter = simpledialog.askstring("Filter Tasks", "Enter status to filter by (e.g., Done, Pending):")
     if status_filter:
         matching = [
-            f"{i+1}. {t['name']} [{t['status']}]"
+            f"{i+1}. {t['name']} [{t['status']}]" 
             for i, t in enumerate(task_list) if t['status'].lower() == status_filter.lower()
         ]
         if matching:
@@ -80,18 +138,15 @@ def view_by_status():
 
 # GUI setup
 root = tk.Tk()
-root.title("To-Do List App - Iteration 1")
+root.title("To-Do List App")
 root.geometry("420x450")
 root.configure(bg="#f0f0f0")
 
-# Main layout frame
 main_frame = tk.Frame(root, padx=10, pady=10, bg="#f0f0f0")
 main_frame.pack(fill="both", expand=True)
 
-# App Title
 tk.Label(main_frame, text="To-Do List", font=("Arial", 18, "bold"), bg="#f0f0f0").pack()
 
-# Buttons layout
 button_frame = tk.Frame(main_frame, bg="#f0f0f0")
 button_frame.pack(pady=10)
 
@@ -100,7 +155,6 @@ tk.Button(button_frame, text="Delete Task", width=15, command=delete_task).grid(
 tk.Button(button_frame, text="Mark as Done", width=15, command=mark_task_done).grid(row=1, column=0, padx=5, pady=5)
 tk.Button(button_frame, text="View by Status", width=15, command=view_by_status).grid(row=1, column=1, padx=5, pady=5)
 
-# Scrollable task display area
 task_display_container = tk.Frame(main_frame, bd=2, relief="sunken")
 task_display_container.pack(fill="both", expand=True)
 
@@ -115,12 +169,11 @@ canvas.configure(yscrollcommand=scrollbar.set)
 canvas.pack(side="left", fill="both", expand=True)
 scrollbar.pack(side="right", fill="y")
 
-task_frame = scrollable_frame  # Alias
+task_frame = scrollable_frame
 
-# Exit Button
 tk.Button(main_frame, text="Exit", command=root.quit).pack(pady=10)
 
-# Initial task display
+load_tasks()
 refresh_task_display()
 
 root.mainloop()
