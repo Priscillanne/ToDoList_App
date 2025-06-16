@@ -52,4 +52,4 @@ These features were adapted to support and display the new fields. The view func
 No core functionality was removed but features were enhanced to offer more flexibility without sacrificing simplicity. While this version does not support persistent storage or filtering by category or priority, it lays the foundation for future improvement like file saving and advanced search. This iteration moves the app closer to becoming a reliable daily task planner.
 
 ## Conclusion 
-This iteration significantly improves the application's usefulness as a daily planning tool. By introducing due dates, priorities, and categories, and upgrading all existing features accordingly, the app is now better equipped to serve users' real-world task management needs — while still remaining light, accessible, and easy to use.
+This iteration significantly improves the application's usefulness as a daily planning tool. By introducing due dates, priorities, and categories, and upgrading all existing features accordingly, the app is now better equipped to serve users' real-world task management needs while still remaining light, accessible, and easy to use.
