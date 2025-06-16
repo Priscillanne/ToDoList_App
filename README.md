@@ -9,7 +9,8 @@ This marks a significant **usability improvement**, making the app more **user-f
 - Adding
 - Deleting
 - Updating
-- Filtering tasks - are now done through interactive dialog boxes and buttons, replacing terminal inputs.
+- Filtering tasks 
+These are now done through interactive dialog boxes and buttons, replacing terminal inputs.
 
 ## Task Attributes Retained
 **Each task retains the previous attributes for consistency:**
@@ -17,9 +18,8 @@ This marks a significant **usability improvement**, making the app more **user-f
 - Status
 - Due date
 - Priority
-- Category - for consistency, and tasks are displayed with clear formatting inside a scrollable window.
-
-Tasks are displayed with **clear formatting** inside a **scrollable window**, improving readability and usability.
+- Category 
+For consistency, and tasks are displayed with clear formatting inside a scrollable window.Tasks are displayed with **clear formatting** inside a **scrollable window**, improving readability and usability.
 
  ## Persistent Storage (Major Enhancement)
 
