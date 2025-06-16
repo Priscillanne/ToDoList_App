@@ -15,3 +15,7 @@ All existing features such as
 5. Filtering tasks 
 
 These features were adapted to support and display the new fields. The view functions now provide a richer and more informative output which improves the overall user experience not only that but status filtering also reflects these changes like showing tasks along with their new details when filtered.
+
+Limitations 
+No core functionality was removed but features were enhanced to offer more flexibility without sacrificing simplicity. While this version does not support persistent storage or filtering by category or priority, it lays the foundation for future improvement like file saving and advanced search. This iteration moves the app closer to becoming a reliable daily task planner.
+
