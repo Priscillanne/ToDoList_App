@@ -10,3 +10,9 @@ The first iteration of the To-Do-List application is a basic command-line interf
 
 Each task is stored as a dictionary containing two fields whose name and status are set to “pending” upon creation. The menu-driven interface guides the user through each operation which ensures a smooth interaction experience. 
 
+Key feature 
+
+Key feature implemented in this iteration is : 
+* The ability to mark a task with any custom status such as “done” or “in progress” instead of limiting it to just “Done”. This provides users with greater flexibility in tracking their task progress.
+* Users can view tasks filtered by specific statuses, which enhance task management clarity. 
+* Proper error handling has been incorporated across all features, ensuring that invalid inputs and edge cases like an empty task list or incorrect task numbers are handled gracefully, preventing the application from crashing.
