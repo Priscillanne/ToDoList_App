@@ -1,4 +1,4 @@
-**Iteration 1: report **
+**Iteration 1: report**
 
 The first iteration of the To-Do-List application is a basic command-line interface which was developed using python, in the application allows users to: 
 
