@@ -26,7 +26,10 @@ While the feature set aligns well with standard to-do-list functionality, a few 
 
 ## Limitations 
 This iteration sets a solid foundation for future development, although the application functions effectively in its current form, 
-* It lacks persistence data storage when all tasks are lost when the program exits. This will be addressed in the next iteration.
+* It lacks persistence data storage when all tasks are lost when the program exits. T
+* It also lacks of enhanced features
+
+**This will be addressed in the next iteration.**
 
 ## Conclusion
 Overall this iteration successfully delivers a fully functional, text based task manager with clean modular code and a focus on user experience.
