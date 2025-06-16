@@ -1,66 +1,55 @@
+# To-Do-List Application
 
-# Iteration 3 -main 
+## Team Members
+1. Suren A/L Krishnan (BAI_A2009F-2501003)
+2. Ruhan A/L S.Gopi (202410063)
+3. Emanuel Preston A/L Vincent (BIT_B2201F-2409001)
+4. Priscilla A/P Sankar (BAI_B2009F-2409008)
+5. Sambureni Lisa Ruramai (BDS_B2201F-2409002)
 
-In this third iteration, the To-Do-List application transitioned from a **console-based interface** to a fully functional **Graphical User Interface (GUI)** using **Tkinter**.  
-This marks a significant **usability improvement**, making the app more **user-friendly** and **visually accessible**.
+## 1.0 Introduction to the Application
+
+This assignment is a To-Do-List Application developed for the **Software Engineering course (BAI21113), Assignment 1**. This is a Python based application designed  to help users effectively manage their daily tasks. 
+
+## The app allows users to:  
+1. Add new task
+2. View all tasks
+3. Delete task
+4. Mark Task as completed 
+5. View Done/Pending Tasks
+6. Categorize task
+7. Prioritize task 
+8. Set due dates for each task
+
+The main goal of this application is to improve personal productivity by providing a simple yet efficient task management system, which enables users to track their responsibilities  and stay organized. 
+
+This assignment  involves three structured iterations each adding new functionality and a user friendly graphical interface (GUI). 
+
+## 1.1 Technologies Used
+### 1.1.0 Development Tools & Process 
+
+**1.  Followed an iterative development process, manages through:**
+Git & GitHub 
+Used for version control, structured branching, adding commit messages, merging, tagging and project documentation through README.md file. 
+
+**In this assignment it contains 4 README.md files:** 
+1. Main → Project overview (this file)
+2. Iteration-1  
+3. Iteration-2
+4. Iteration-3 
 
 
-## GUI Task Operations
-**All major task operations such as:**
-- Adding
-- Deleting
-- Updating
-- Filtering tasks 
-These are now done through interactive dialog boxes and buttons, replacing terminal inputs.
+**Kanban board (via GitHub Projects)** 
+Used to visualize and manage tasks, ensuring clarity and steady progress throughout the project lifecycle.
 
-## Task Attributes Retained
-**Each task retains the previous attributes for consistency:**
-- Name
-- Status
-- Due date
-- Priority
-- Category 
-For consistency, and tasks are displayed with clear formatting inside a scrollable window.Tasks are displayed with **clear formatting** inside a **scrollable window**, improving readability and usability.
 
- ## Persistent Storage (Major Enhancement)
+**More details are provided below:**
+Section 3.0: GitHub Usage
+Section 4.0: Kanban Board 
 
-One of the most impactful additions in this iteration is persistent storage using JSON.
-**Tasks are now:**
-- Saved to a file (tasks.json)
-- Automatically loaded when the application starts
 
-This solves the biggest limitation of previous versions, where all data was lost once the app was closed.
-
-## Additional Improvements
-
-This iteration also introduces:
-
-1) **Input validation** for:
-  - Date format  
-  - Priority level  
-
-2) **Information message boxes** for:
-  - Errors  
-  - Confirmations  
-
-3) A **smooth task display refresh mechanism** that updates the UI **instantly** after every change.
-
-4) These features were implemented to align with **standard GUI expectations** while ensuring the app remains **lightweight** and **easy to use**.
-
-5) A **deliberate design choice** was made to use `simpledialog` for inputs to maintain a **clean and straightforward interface**.
-
-## Limitations & Future Work
-
-While this version is highly improved, a few limitations remain:
-
-- The app currently supports filtering by status only
-
-**Future iterations could explore the following enhancements:**
-
-- Advanced filtering (by category or due date)  
-- Editing tasks  
-- Color-coded task indicators
-
-## Conclusion
-In summary, iteration 3 successfully modernized the app interface, while strengthening its functionality with data persistence.
-
+**2. Programming Language Used**
+* Python used for all 
+--> Main Logic application 
+--> Graphical User Interface → via Tkinter
+--> Persistent data handling → via JSON
