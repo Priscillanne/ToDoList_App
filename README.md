@@ -27,3 +27,5 @@ For example,
 Limitations 
 This iteration sets a solid foundation for future development, although the application functions effectively in its current form, 
 * It lacks persistence data storage when all tasks are lost when the program exits. This will be addressed in the next iteration.
+
+Overall this iteration successfully delivers a fully functional, text based task manager with clean modular code and a focus on user experience.
