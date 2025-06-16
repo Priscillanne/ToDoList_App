@@ -16,3 +16,10 @@ Key feature implemented in this iteration is :
 * The ability to mark a task with any custom status such as “done” or “in progress” instead of limiting it to just “Done”. This provides users with greater flexibility in tracking their task progress.
 * Users can view tasks filtered by specific statuses, which enhance task management clarity. 
 * Proper error handling has been incorporated across all features, ensuring that invalid inputs and edge cases like an empty task list or incorrect task numbers are handled gracefully, preventing the application from crashing.
+
+Enhancement 
+While the feature set aligns well with standard to-do-list functionality, a few enhancements were deliberately made. 
+
+For example, 
+* The ability to input custom status names (instead of hardcoding “done”) makes the system more realistic and adaptable. 
+* All user inputs are validated with appropriate error messages to improve the overall robustness of the system.
