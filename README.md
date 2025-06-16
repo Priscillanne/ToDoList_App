@@ -23,3 +23,7 @@ While the feature set aligns well with standard to-do-list functionality, a few 
 For example, 
 * The ability to input custom status names (instead of hardcoding “done”) makes the system more realistic and adaptable. 
 * All user inputs are validated with appropriate error messages to improve the overall robustness of the system.
+
+Limitations 
+This iteration sets a solid foundation for future development, although the application functions effectively in its current form, 
+* It lacks persistence data storage when all tasks are lost when the program exits. This will be addressed in the next iteration.
