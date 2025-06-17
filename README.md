@@ -135,9 +135,9 @@ This picture shows repository overview showing README.md and .gitignore in initi
 In order to ensure organized and manageable development, a clear branching strategy was used throughout this assignment. Branching is an important part of version control. Specifically, one branch for each development iteration was created. 
 
 **Branches Created** 
-Iteration-1 → Core task Management (CRUD) 
-Iteration-2 → advanced features
-Iteration-3 → GUI and persistent storage 
+* Iteration-1 → Core task Management (CRUD) 
+* Iteration-2 → advanced features
+* Iteration-3 → GUI and persistent storage 
 
 Each development process was accomplished under each branch.The main branch remained stable and received the branches via merging strategy after completing and testing. 
 
@@ -235,16 +235,16 @@ As mentioned, all work is done through the GitHub web interface. After the final
 
 **The main purpose of tagging,** 
 
-**1. Version Separation** 
+1. Version Separation*
 * Each tag like v1.0 v2.0 v3.0 represents a specific completed stage of completion. 
 * Helps to separate and identify different version of application 
 * If anyone wants to look through assignment 1 , iteration 1 core function, they can click tag v1.0 and view files from iteration 1 only which is (README.md, .gitginore, iteration1.py) 
 
-**2.Testing reference** 
+2.Testing reference
 * A tag marks a stable point in code which shows that it has been tested and confirmed to work. 
 * If bugs occurs in future version, it can be easily undo the tag unlike merging. 
 
-**3. Release management**  
+3. Release management
 * The manager can view the final version in clearer form under tags. 
 * It counts as a deliverable final state of the project.
 
