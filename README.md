@@ -30,7 +30,8 @@ This assignment  involves three structured iterations each adding new functional
 
 **1.  Followed an iterative development process, manages through:**
 Git & GitHub 
-Used for version control, structured branching, adding commit messages, merging, tagging and project documentation through README.md file. 
+Used for version control, structured branching, adding commit messages, merging, tagging and project documentation through README.md file. Did collaborate with group members by creating an account for each. 
+
 
 **In this assignment it contains 4 README.md files:** 
 1. Main → Project overview (this file)
@@ -53,3 +54,61 @@ Section 4.0: Kanban Board
 --> Main Logic application 
 --> Graphical User Interface → via Tkinter
 --> Persistent data handling → via JSON
+
+## 2.0 Iterative Development Overview 
+This To-Do-List Application using an iterative development approach. This project was divided into three major iterations, each iteration introducing new features. Importantly, builded upon the previous iteration by adding new features by increasing its complexity. 
+
+Below is summary of the three iterations:
+
+## 2.1 Iteration-1 
+Build core features of To-Do-List Application. 
+
+**Key features:**
+1. Add new task
+2. View all tasks
+3. Delete task
+4. Mark Task as completed 
+5. View Done/Pending Tasks
+	
+**Focus**
+* Clear functional base for task management 
+* Simple, text-based user interface
+* Implemented core task logic via CRUD operations
+
+
+## 2.2 Iteration-2
+Enhance task management by allowing new features to add in by building upon pervios iteration-1
+
+
+**New features added:**
+	1. Assign Categorization to task (e.g., Study, Personal, Work) 
+	2. Set priority Level (High, Medium, Low) 
+	3. Add due dates for each task. 
+
+**Focus**
+Improving task organization
+Providing planning support 
+Increase complexity of the application 
+
+## 2.3 Iteration-3
+Improve user experience with Graphical User interface (GUI) and persistent storage
+
+**New features added:**
+1. Full GUI developed using Tkinter
+2. Store tasks on JSON files+8
+3. GUI based input for category, priority and due date
+4. Button and visual display of all core functions. 
+
+**Focus**
+* User friendly interface
+* Visual clarity 
+* Store data
+
+## 2.4  Iteration Overall Explanation 
+Each iterations detailed explanation, challenges faced, commit messages added explained under the respective README.md iteration branches, ***(refer to tags)***
+
+1. Iteration-1 → Core Functions
+2. Iteration-2 → New features
+3. Iteration-3 → GUI and data persistence
+
+
