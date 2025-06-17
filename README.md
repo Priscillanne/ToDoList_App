@@ -50,10 +50,10 @@ Section 4.0: Kanban Board
 
 
 **2. Programming Language Used**
-* Python used for all 
---> Main Logic application 
---> Graphical User Interface → via Tkinter
---> Persistent data handling → via JSON
+Python used for all: 
+* Main Logic application 
+* Graphical User Interface → via Tkinter
+* Persistent data handling → via JSON
 
 ## 2.0 Iterative Development Overview 
 This To-Do-List Application using an iterative development approach. This project was divided into three major iterations, each iteration introducing new features. Importantly, builded upon the previous iteration by adding new features by increasing its complexity. 
@@ -115,7 +115,7 @@ Each iterations detailed explanation, challenges faced, commit messages added ex
 ## 3.0 Github Usage 
 This section explains how Git and Github were used effective version control for this assignment by ensuring a structured and traceable development process. 
 
-###3.1 Initial Repository Set up 
+### 3.1 Initial Repository Set up 
 Created a new public repository and was named appropriately as per selected application for assignment which is “ToDoList_App”  in short and memorable way. 
 
 
@@ -142,9 +142,8 @@ Iteration-3 → GUI and persistent storage
 Each development process was accomplished under each branch.The main branch remained stable and received the branches via merging strategy after completing and testing. 
 
 **Steps taken to create branches:** 
-1. After initializing a repository set up on Github, for each development process, branches were created as per picture below: 
-###########################################################################
-2.After creating branches, each branch will have its own README.md and .gitignore file. 
+1. After initializing a repository set up on Github, for each development process, branches were created. 
+2. After creating branches, each branch will have its own README.md and .gitignore file. 
 3. Afterwards, for each iteration branch an empty python code file .py was uploaded by clicking “upload files button”
 
  **For example for iteration-1 branch:**
@@ -218,11 +217,11 @@ e. Are the tasks saved ?
 To clearly mark completion of each development phase, Git tags were used for each iteration. 
 
 **Tag Format:**
-v1.0 → Iteration 1 completed 
-v2.0 → Iteration 2 completed
-v3.0 → Iteration 3 completed
+1) v1.0 → Iteration 1 completed 
+2) v2.0 → Iteration 2 completed
+3) v3.0 → Iteration 3 completed
 
-**Workflow:*  
+**Workflow:**  
 As mentioned, all work is done through the GitHub web interface. After the final code block was copy pasted into the GitHub iteration .py  file under each branch. Tag has been created. 
 
 1. Clicked on the releases tab, and create a new release button was clicked under tags box.
@@ -283,20 +282,20 @@ After merging an iteration branch into main, GitHub automatically updates all fi
 ## 3.3 Github Challenges
 During the version control process using Github, a few challenges were encountered and addressed as follows:
 1. Preserving README.MD During Merging
-**Challenge:** When merging iteration branches into main, the README.md file from the iteration branch sometimes replaced the original main README content.
-**Solution:** After each merge,manually checked and restored the correct README.md content in the main branch by copy-pasting the intended version. 
+* **Challenge:** When merging iteration branches into main, the README.md file from the iteration branch sometimes replaced the original main README content.
+* **Solution:** After each merge,manually checked and restored the correct README.md content in the main branch by copy-pasting the intended version. 
 
 2. Tagging Timing
-**Challenge:** GitHub allows tags to be deleted, but merges are permanent. It was important to make sure everything was finalized before tagging and merging.
-**Solution:** I only applied tags like v1.0, v2.0, and v3.0 after rechecking all code, README files, and commit history to ensure correctness before merging.
+* **Challenge:** GitHub allows tags to be deleted, but merges are permanent. It was important to make sure everything was finalized before tagging and merging.
+* **Solution:** I only applied tags like v1.0, v2.0, and v3.0 after rechecking all code, README files, and commit history to ensure correctness before merging.
 
 3. Sequential Uploads with Commit 
-**Challenge:*8 Uploading and committing code section by section through the web interface required careful version control to avoid mixing features.
-**Solution:** I followed a consistent strategy of copy-pasting code feature-by-feature, committing with clear messages (feat:, fix:, etc.) to maintain a logical commit history.
+* **Challenge:** Uploading and committing code section by section through the web interface required careful version control to avoid mixing features.
+* **Solution:** I followed a consistent strategy of copy-pasting code feature-by-feature, committing with clear messages (feat:, fix:, etc.) to maintain a logical commit history.
 
 
-**4.0 Kanban Board**
-Kanban Board Screenshots: Screenshots of your Kanban board at three different stages can be refer to Kanban folders for the pictures. 
+## 4.0 Kanban Board
+* ***Kanban Board Screenshots***: *Screenshots of your Kanban board at three different stages can be refer to Kanban folders for the pictures.* 
 
 Did used GitHub Projects to create a Kanban board after completing the main development phases. The board had columns for Backlog, To Do, In Progress, Testing, and Done.Instead of planning tasks ahead, we mostly used the board to organize and track completed tasks from each iteration. This helped us confirm that all features were implemented correctly.
 
