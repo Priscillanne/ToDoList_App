@@ -105,7 +105,7 @@ Improve user experience with Graphical User interface (GUI) and persistent stora
 * Store data
 
 ## 2.4  Iteration Overall Explanation 
-Each iterations detailed explanation, challenges faced, commit messages added explained under the respective README.md iteration branches, ***(refer to tags)***
+Each iterations detailed explanation, challenges faced, commit messages is explained under the respective README.md iteration branches, ***(refer to tags)***
 
 1. Iteration-1 → Core Functions
 2. Iteration-2 → New features
