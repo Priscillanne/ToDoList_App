@@ -11,7 +11,7 @@
 
 This assignment is a To-Do-List Application developed for the **Software Engineering course (BAI21113), Assignment 1**. This is a Python based application designed  to help users effectively manage their daily tasks. 
 
-## The app allows users to:  
+**The app allows users to:**  
 1. Add new task
 2. View all tasks
 3. Delete task
@@ -81,9 +81,9 @@ Enhance task management by allowing new features to add in by building upon perv
 
 
 **New features added:**
-	1. Assign Categorization to task (e.g., Study, Personal, Work) 
-	2. Set priority Level (High, Medium, Low) 
-	3. Add due dates for each task. 
+1. Assign Categorization to task (e.g., Study, Personal, Work) 
+2. Set priority Level (High, Medium, Low) 
+3. Add due dates for each task. 
 
 **Focus**
 Improving task organization
